@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Navbar from "./components/ui/Navbar"
-import CardWeather from "./components/ui/CardWeather"
+import SectionWeather from "./components/ui/SectionWeather"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -10,9 +10,9 @@ function App() {
   }
 
   return (
-    <div className={`min-h-screen h-full w-full ${darkMode ? 'dark' : ''} bg-background text-text transition-colors`}>
+    <div className={`flex flex-col min-h-screen w-screen ${darkMode ? 'dark' : ''} bg-background text-text transition-colors`}>
       <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
-      <CardWeather />
+      <SectionWeather />
     </div>
   )
 }
