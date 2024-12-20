@@ -3,7 +3,9 @@ import Navbar from "./components/ui/Navbar"
 import SectionWeather from "./components/ui/SectionWeather"
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(() => {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  })
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
