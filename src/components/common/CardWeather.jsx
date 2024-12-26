@@ -3,11 +3,14 @@ import TemperatureIcon from "../../assets/temperature.svg"
 import WindIcon from "../../assets/wind.svg"
 import DropletIcon from "../../assets/droplet.svg"
 import CloudIcon from "../../assets/cloud.svg"
+import { CONDITIONS } from "../../constants/CONDITIONS"
 
 export default function CardWeather({ name, country, last_updated, temp_c, temp_f, condition, humidity, wind_kph, wind_dir }) {
+  const bgColor = CONDITIONS.COLORS[condition.text.replace(" ", "")] || "from-primary to-secondary"
+
   return(
-    <div className="m-5 border-2 border-accent/70 rounded-md w-1/3">
-      <div className="p-5 flex justify-between text-white dark:text-text bg-gradient-to-br bg-blue-700 from-indigo-900">
+    <div className="m-5 border-4 border-accent/70 rounded-md w-1/3">
+      <div className={`p-5 flex justify-between text-white bg-gradient-to-br ${bgColor}`}>
         <div>
           <h2 className="text-2xl font-bold">{name}</h2>
           <p className="text-base opacity-80">{country}</p>
