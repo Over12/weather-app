@@ -18,6 +18,7 @@ export default function SectionWeather() {
 
     try {
       setLoading(true)
+      setWeatherData({})
       const data = await getWeatherData({ city })
 
       setWeatherData(data)
@@ -34,7 +35,7 @@ export default function SectionWeather() {
         <h2 className="text-lg w-full">I want to know the weather in:</h2>
         <div className="w-full">
           <input type="text" placeholder="City" className="p-2 bg-secondary/30 rounded-l-md outline-none text-text w-3/4 border border-accent/70" name="city" required />
-          <button type="submit" className="1/4 bg-accent/70 px-3 py-2 rounded-r-md border border-transparent">Search</button>
+          <button type="submit" className="1/4 bg-accent/70 px-3 py-2 rounded-r-md border border-transparent" disabled={loading}>Search</button>
         </div>
       </form>
       {loading && <p className="text-accent m-1">Loading...</p>}
