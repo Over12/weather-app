@@ -30,10 +30,10 @@ export default function SectionWeather() {
   }
 
   return(
-    <section className="flex flex-col flex-grow justify-center items-center">
+    <section className="flex flex-col flex-grow justify-center items-center px-5 md:px-10">
       <form action="" className="flex flex-col gap-2" onSubmit={handleSearch}>
         <h2 className="text-lg w-full">I want to know the weather in:</h2>
-        <div className="w-full">
+        <div className="w-full flex">
           <input type="text" placeholder="City" className="p-2 bg-secondary/30 rounded-l-md outline-none text-text w-3/4 border border-accent/70" name="city" required />
           <button type="submit" className="1/4 bg-accent/70 px-3 py-2 rounded-r-md border border-transparent" disabled={loading}>Search</button>
         </div>
