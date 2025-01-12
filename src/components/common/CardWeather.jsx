@@ -9,7 +9,7 @@ export default function CardWeather({ name, country, last_updated, temp_c, temp_
   const bgColor = CONDITIONS.COLORS[condition.text.replace(" ", "")] || "from-primary to-secondary"
 
   return(
-    <div className="m-5 border-4 border-accent/70 rounded-md w-1/3">
+    <div className="m-5 border-4 border-accent/70 rounded-md w-full sm:w-4/6 md:w-3/6 lg:w-5/12 xl:w-1/3">
       <div className={`p-5 flex justify-between text-white bg-gradient-to-br ${bgColor}`}>
         <div>
           <h2 className="text-2xl font-bold">{name}</h2>
