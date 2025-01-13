@@ -6,7 +6,7 @@ import Moon from "../../assets/moon.svg"
 export default function Navbar({ toggleDarkMode, darkMode }) {
   return (
     <nav className="flex relative justify-center items-center bg-secondary/50 border-4 border-t-0 border-secondary rounded-b-xl px-10 py-5 mx-5">
-      <h1 className="text-center text-2xl md:text-3xl font-bold">Weatherly</h1>
+      <h1 className="text-center text-2xl md:text-3xl font-bold">Weathxr</h1>
       <button className="right-5 absolute p-2 rounded-full border-2 border-black dark:border-yellow-500 bg-background/30" onClick={toggleDarkMode}>
         {darkMode ? (
           <img src={Sun} alt="Sun Icon" className="size-6 md:size-7" />
