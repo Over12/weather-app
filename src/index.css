@@ -8,8 +8,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgb(var(--text));
-  background-color: rgb(var(--background));
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,17 +17,18 @@
 
 @layer base {
   :root {
-    --text: 15 12 34;
-    --background: 234 232 247;
-    --primary: 38 27 101;
-    --secondary: 136 122 225;
-    --accent: 54 34 185;
+    --text: 12 18 19;
+    --background: 241 248 249;
+    --primary: 60 173 195;
+    --secondary: 139 219 233;
+    --accent: 71 212 240;
   }
+
   .dark {
-    --text: 224 221 243;
-    --background: 10 8 23;
-    --primary: 165 154 228;
-    --secondary: 44 30 133;
-    --accent: 90 70 221;
+    --text: 236 242 243;
+    --background: 6 13 14;
+    --primary: 60 173 195;
+    --secondary: 22 102 116;
+    --accent: 15 156 184;
   }
 }

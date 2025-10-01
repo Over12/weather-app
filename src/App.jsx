@@ -1,21 +1,19 @@
-import { useState } from "react"
-import Navbar from "./components/ui/Navbar"
-import SectionWeather from "./components/ui/SectionWeather"
+import { useState } from 'react'
+import ThemeButton from './components/common/ThemeButton'
+import Home from './components/ui/Home'
 
 function App() {
-  const [darkMode, setDarkMode] = useState(() => {
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-  })
+  const [theme, setTheme] = useState(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+  };
 
   return (
-    <div className={`flex flex-col min-h-screen w-screen ${darkMode ? 'dark' : ''} bg-background text-text transition-colors`}>
-      <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
-      <SectionWeather />
-    </div>
+    <main className={`relative bg-background text-text ${theme} transition-colors`}>
+      <Home />
+      <ThemeButton toggleTheme={toggleTheme} theme={theme} />
+    </main>
   )
 }
 
