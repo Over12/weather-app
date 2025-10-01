@@ -4,10 +4,8 @@ export async function getWeatherData({ city }) {
   const response = await fetch(`${API_DATA.url}?key=${API_DATA.key}&q=${city}&aqi=no`)
   const data = await response.json()
 
-  if (data.error) {
-    return {
-      error: data.error.message
-    }
+  if (response.status !== 200) {
+    throw new Error(data.error.message)
   }
 
   const weatherData = {
